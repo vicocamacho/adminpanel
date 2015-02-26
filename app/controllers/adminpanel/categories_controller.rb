@@ -3,11 +3,11 @@ module Adminpanel
     skip_before_action :set_resource_collection
 
     def index
-      @categories = Category.all
+      @categories = Category.where(parent_id: params[:parent_id])
     end
 
     def new
-      @resource_instance = @model.new
+      @resource_instance = @model.new(model: params[:model], parent_id: params[:parent_id])
       respond_to do |format|
         format.html { render 'adminpanel/templates/new' }
         format.js { render }
@@ -46,7 +46,7 @@ module Adminpanel
 
     private
       def category_params
-        params.require(:category).permit(:name, :model)
+        params.require(:category).permit(:name, :model, :parent_id)
       end
   end
 end

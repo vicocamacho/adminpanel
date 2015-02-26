@@ -8,7 +8,7 @@
           :class => 'fa fa-plus-circle fa-2x') +
           content_tag(
             :span,
-            I18n.t("action.create", resource: @model.display_name) + " para #{model}",
+            I18n.t("action.create", resource: @model.display_name) + " para #{model.pluralize}",
             nil
           ),
           :class => "btn btn-box span2"),
@@ -16,7 +16,8 @@
         :controller => params[:controller],
         :action => "new",
         :"model" => model,
-        :currentcontroller => params[:controller]
+        :currentcontroller => params[:controller],
+        :parent_id => params[:parent_id]
       },
       :"data-target" => '#new-category',
       :"data-toggle" => 'modal',
@@ -34,9 +35,13 @@
   </tr>
   <% categories.each do |category| %>
     <tr>
-      <td><%= link_to category.name, category_path(category) %></td>
       <td>
-        <%= render 'adminpanel/icons/show', resource: category %>
+        <%= link_to category.name,
+          category_action_link(category)
+        %>
+      </td>
+      <td>
+        <%= render 'adminpanel/icons/show', resource: category, url: category_action_link(category) %>
 
         <%= render 'adminpanel/icons/edit', resource: category %>
 

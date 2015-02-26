@@ -33,11 +33,11 @@
             <% else %>
               <div class="tab-pane" id="tab<%= index %>">
             <% end %>
-              <% current_cateogory_records = @categories.select {|c| c.model == category.model } %>
+              <% current_category_records = @categories.select {|c| c.model == category.model } %>
               <%=
                 render(
                 'categories_table',
-                categories: current_cateogory_records,
+                categories: current_category_records,
                 model: category.model
               ) %>
             </div>

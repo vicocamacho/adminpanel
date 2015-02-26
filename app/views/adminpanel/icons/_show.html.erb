@@ -6,7 +6,7 @@
         nil,
         class: 'fa fa-search-plus'
       ),
-      [resource],
+      defined?(url) ? url : [resource],
       class: 'spinner-link',
       title: I18n.t('action.show', resource: resource.name),
       id: 'show-resource-icon'

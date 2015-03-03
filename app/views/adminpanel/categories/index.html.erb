@@ -1,5 +1,5 @@
 <%
-title = params[:parent_id].nil? ? I18n.t('model.Categories') : I18n.t('Categories of', category: Adminpanel::Category.find(paras[:parent_id]))
+title = params[:parent_id].nil? ? I18n.t('model.Categories') : I18n.t('Categories of', category: Adminpanel::Category.find(params[:parent_id]))
 provide(:page_title, title) %>
 
 <div class="row-fluid">

@@ -44,7 +44,7 @@ es:
       default: '%d/%m/%Y'
       estimate: '%Y-%m-%d'
       time: '%H:%M'
-  Categories of: 'Child Categories of %{category}'
+  Categories of: 'Categorias de %{category}'
   Add Image: 'Agregar Imagen'
   wysiwyg:
     description: 'Escriba la descripción aquí'

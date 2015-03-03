@@ -39,6 +39,7 @@ en:
     formats:
       short: '%B %d, of %Y'
       estimate: '%Y-%m-%d'
+  Categories of: 'Child Categories of %{category}'
   Add Image: 'Add Image'
   wysiwyg:
     description: 'Write descrition here...'

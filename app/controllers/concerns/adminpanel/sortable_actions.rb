@@ -9,13 +9,13 @@ module Adminpanel
     end
 
     def move_to_better
-      resource.move_to_better_position
+      @resource_instance.move_to_better_position
       update_index_table
 
     end
 
     def move_to_worst
-      resource.move_to_worst_position
+      @resource_instance.move_to_worst_position
       update_index_table
     end
 
